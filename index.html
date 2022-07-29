@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/home-page.css">
+
+</head>
+<body>
+	<header class="header">
+		<div class="header-menu">
+			<span class="title">Logo</span>
+			<div class="bar-items-justify">
+				<div></div>
+				<form class="searchbar-form">
+					<input class="header-menu-searchbar" type="text" placeholder="search"name="search">
+					<input class="header-menu-searchbar-button" type="button" name="searchbutton">
+				</form>
+
+				<div class="header-menu-items-div">
+					<div class="menu-first ul-items">
+						<ul class="header-menu-items">
+							<li id="home"><a class="linktype mi">Home</a></li>
+							<li id="contact"><a class="linktype mi">Contact</a></li>
+						</ul>
+					</div>
+					<div class="menu-second ul-items">
+						<ul class="header-menu-items">
+							<li><a class="linktype singing mi">Log in</a></li>
+							<li><a class="linktype singing mi">Sing Up</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<content class="content">
+		<div class="content-catalog">
+			<b class="content-catalg-title">Perifericos</b>
+			<div class="content-panel show-items">
+				<div class="content-panel-items perifericos"></div>
+				<div class="scroll-button-div rs"><input type="button" class="scroll-button sbr" value=""/></div>
+				<div class="scroll-button-div ls"><input type="button" class="scroll-button sbl" value=""/></div>
+				
+			</div>
+		</div>
+		<div class="content-catalog">
+			<b class="content-catalg-title">Acessórios</b>
+			<div class="content-panel show-items">
+				<div class="content-panel-items acessorios"></div>
+				<div class="scroll-button-div rs"><input type="button" class="scroll-button sbr" value=">"/></div>
+				<div class="scroll-button-div ls"><input type="button" class="scroll-button sbl" value="<"/></div>
+				
+			</div>
+		</div>
+	</content>
+
+	<footer class="footer-menu"></footer>
+
+	<script type="text/javascript">
+		const items = [
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		},
+		{
+			nome: "Teclado Desktop",
+			price: 100,
+			imageBanner: "placeholdericon.png"
+		}]
+
+		const perifericos = document.querySelector(".perifericos")
+		const menuItems = document.querySelector(".content-panel-items")
+		const contentPanel = document.querySelector(".content-panel")
+
+		for(a in items) {
+			let x = parseInt(a)+1
+			perifericos.innerHTML += `<div class='catalogue-item'><img class='item-image' src='${items[a].imageBanner}'></img><b class='item-name'>${items[a].nome} ${x}</b><b class='item-price'>R$${items[a].price}</b> <button class='buybutton'>comprar</button></div>`
+		}
+
+		const rs = document.querySelector(".rs")
+		const ls = document.querySelector(".ls")
+
+		const sbr = document.querySelector(".sbr")
+		const sbl = document.querySelector(".sbl")
+
+		contentPanel.addEventListener("mouseover", () => {
+			if(window.screen.width > 530) {
+				rs.style = "display: flex; flex-direction: column;"
+				ls.style = "display: flex; flex-direction: column;"
+			}
+		})
+
+		contentPanel.addEventListener("mouseout", () => {
+			rs.style = "display: none;"
+			ls.style = "display: none;"
+		})
+
+		sbr.addEventListener("click", () => {
+			menuItems.scrollLeft += 200;
+		})
+
+		sbl.addEventListener("click", () => {
+			menuItems.scrollLeft -= 200;
+		})
+
+		const content = document.querySelector(".content")
+
+		
+	</script>
+</body>
+</html>
