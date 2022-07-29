@@ -197,6 +197,11 @@ body {
 
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
+	transition: transform .2s;
+}
+
+.catalogue-item:hover {
+	transform: scale(1.1);
 }
 
 .item-image {
@@ -265,29 +270,27 @@ body {
 	border-radius: 15px;
 	width: 100%;
 	font-weight: bold;
+	transition: 0.3s;
+	opacity: 0.6;
 }
 
 .buybutton:hover {
 	cursor: pointer;
+	opacity: 1;
 }
 
-/* width */
+
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 5px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #19151c;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #493e51;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #564a5f;
 }
